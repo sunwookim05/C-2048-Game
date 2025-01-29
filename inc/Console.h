@@ -50,8 +50,8 @@ typedef const char* ColorType;
 
 typedef struct Console {
     void (*setColor)(ColorType);
-    void (*resetConsole)(void);
-    void (*clearConsole)(void);
+    void (*reset)(void);
+    void (*clear)(void);
     int (*kbhit)(void);
 } Console;
 

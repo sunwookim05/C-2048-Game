@@ -9,8 +9,8 @@ char nextChar(void){
     return c;
 }
 
-byte nextByte(void){
-    byte b;
+int8_t nextByte(void){
+    int8_t b;
     scanf("%" SCNd8, &b);
     getchar();
     return b;
@@ -37,8 +37,8 @@ int64_t nextLong(void){
     return l;
 }
 
-ubyte nextUByte(void){
-    ubyte b;
+uint8_t nextUByte(void){
+    uint8_t b;
     scanf("%" SCNu8, &b);
     getchar();
     return b;
@@ -67,7 +67,7 @@ uint64_t nextULong(void){
 
 boolean nextBoolean(void){
     boolean b = false;
-    string s = (string)calloc(0, sizeof(char) * 5);
+    String s = (String)calloc(0, sizeof(char) * 5);
     scanf("%5s", s);
     if(atoi(s) | !(((*(s+0)|0x20)^'t') ^ ((*(s+1)|0x20)^'r') ^ ((*(s+2)|0x20)^'u') ^ ((*(s+3)|0x20)^'e'))) b = true;
     free(s);
@@ -95,21 +95,21 @@ long double nextLDouble(void){
     return ld;
 }
 
-string next(void){
-    string s = (string)calloc(4096, sizeof(char));
+String next(void){
+    String s = (String)calloc(4096, sizeof(char));
     scanf("%4095s", s);
-    s = (string)realloc(s, sizeof(char) * (strlen(s) + 1));
+    s = (String)realloc(s, sizeof(char) * (strlen(s) + 1));
     getchar();
     return s;
 }
 
-string nextLine(void){
+String nextLine(void){
     char c;
     uint16_t i = 0;
-    string s = (string)calloc(0, sizeof(char) * 2);
+    String s = (String)calloc(0, sizeof(char) * 2);
     while ((i < 4096 - 1) && ((c = fgetc(stdin)) != EOF) && (c != '\n')) {
         *(s + i++) = c;
-        s = (string)realloc(s, sizeof(char) * (i + 1));
+        s = (String)realloc(s, sizeof(char) * (i + 1));
     }
     *(s + i) = '\0';
     return s;

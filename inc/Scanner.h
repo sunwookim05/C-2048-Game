@@ -22,7 +22,7 @@ typedef struct Scanner{
      * @param void
      * @return byte
      */
-    byte (*nextByte)(void);
+    int8_t (*nextByte)(void);
 
     /**
      * @brief User input Short
@@ -50,7 +50,7 @@ typedef struct Scanner{
      * @param void
      * @return ubyte
      */
-    ubyte (*nextUByte)(void);
+    uint8_t (*nextUByte)(void);
 
     /**
      * @brief User input Unsigned Short
@@ -106,14 +106,14 @@ typedef struct Scanner{
      * @param void
      * @return string
      */
-    string (*next)(void);
+    String (*next)(void);
 
     /**
      * @brief User input string with Spaces
      * @param void
      * @return string
      */
-    string (*nextLine)(void);
+    String (*nextLine)(void);
 }Scanner;
 #pragma pack(pop)
 

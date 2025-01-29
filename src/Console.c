@@ -9,7 +9,7 @@ void setColor(ColorType color) {
 #endif
 }
 
-void resetConsole(){
+void resete(){
     #ifdef _WIN32
     HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
     DWORD dwMode = 0;
@@ -25,7 +25,7 @@ void resetConsole(){
     #endif
 }
 
-void clearConsole(){
+void clear(){
 #ifdef _WIN32
     system("cls");
 #else
@@ -61,8 +61,8 @@ int kbhit() {
 Console new_Console(void){
     Console console;
     console.setColor = setColor;
-    console.resetConsole = resetConsole;
-    console.clearConsole = clearConsole;
+    console.reset = resete;
+    console.clear = clear;
     console.kbhit = kbhit;
     return console;
 }

@@ -13,12 +13,11 @@ typedef struct POSITION {
 #pragma pack(push, 1)
 typedef struct GAME {
     uint64_t** gameBord;
-    void (*init)(struct GAME*);
-    void (*play)(struct GAME*);
-    void (*stop)(struct GAME*);
+    boolean (*play)(struct GAME*);
     void (*delete)(struct GAME*);
 } Game;
 #pragma pack(pop)
 
+Game new_Game(void);
 
 #endif
